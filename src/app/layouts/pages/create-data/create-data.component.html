@@ -1,0 +1,34 @@
+<h3>Add New Form</h3>
+<div style="width: 400px; margin: auto;">
+  <div class="submit-form">
+    <div>
+      <div class="form-group">
+        <label for="name">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          required
+          [(ngModel)]="tutorial.title"
+          name="title"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Img Url</label>
+        <input
+          class="form-control"
+          id="imgUrl"
+          required
+          [(ngModel)]="tutorial.imgUrl"
+          name="imgUrl"
+        />
+      </div>
+
+    <button (click)="saveTutorial()" class="btn btn-success" style="margin-left: 120px;" [disabled]="!tutorial.title || !tutorial.imgUrl">Submit</button>
+    <button (click)="onNoClick()" class="btn btn-error" style="float: right;">Close</button>
+
+    </div>
+
+  </div>
+</div>

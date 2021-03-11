@@ -1,0 +1,31 @@
+table {
+    width: 100%;
+    background-color: var(--table-color);
+}
+.mat-cell , .mat-header-cell {
+    color: white;
+    cursor: pointer;
+}
+.mat-icon {
+  cursor: pointer;
+}
+.x {
+  padding-left: 60px;
+}
+.y {
+  padding-right: 100px;
+}
+input, ul, li, h4 {
+  color: white !important;
+}
+
+::ng-deep .mat-form-field-underline, ::ng-deep .mat-form-field-ripple:hover {
+  background-color: var(--red-color) !important;
+}
+.content {
+  width: 100%;
+}
+.mat-paginator {
+  margin-top: 10px;
+   background-color:var(--paginator-color);
+}
