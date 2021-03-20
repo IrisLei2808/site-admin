@@ -2,7 +2,6 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { ApiServiceService } from 'src/app/shared/service/api-service.service';
-import { User } from '../notifications.component';
 
 @Component({
   selector: 'app-edit-data-voucher',
@@ -14,7 +13,7 @@ export class EditDataVoucherComponent implements OnInit {
   currentTutorial = null;
   constructor(
     public dialogRef: MatDialogRef<EditDataVoucherComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: User,
+    @Inject(MAT_DIALOG_DATA) public data: any,
     private apiService: ApiServiceService,
     private toastr: ToastrService
     ) { }
@@ -25,7 +24,7 @@ export class EditDataVoucherComponent implements OnInit {
     this.dialogRef.close();
   }
   updateTutorial(): void {
-    this.apiService.updateBrand(this.data.id, this.data)
+    this.apiService.updateVoucher(this.data.id, this.data)
       .subscribe(
         response => {
           this.onNoClick()

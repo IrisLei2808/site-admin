@@ -29,6 +29,10 @@ import { EditDataPromotionComponent } from "../pages/dashboard/edit-data-promoti
 import { EditDataStoreComponent } from "../pages/icons/edit-data-store/edit-data-store.component";
 import { EditDataUserComponent } from "../pages/map/edit-data-user/edit-data-user.component";
 import { EditDataVoucherComponent } from "../pages/notifications/edit-data-voucher/edit-data-voucher.component";
+import { CreateDataPromotionComponent } from "../pages/dashboard/create-data-promotion/create-data-promotion.component";
+import { CreateDataStoreComponent } from "../pages/icons/create-data-store/create-data-store.component";
+import { CreateDataUserComponent } from "../pages/map/create-data-user/create-data-user.component";
+import { CreateDataVoucherComponent } from "../pages/notifications/create-data-voucher/create-data-voucher.component";
 
 @NgModule({
   imports: [
@@ -61,7 +65,11 @@ import { EditDataVoucherComponent } from "../pages/notifications/edit-data-vouch
     EditDataPromotionComponent,
     EditDataStoreComponent, 
     EditDataUserComponent, 
-    EditDataVoucherComponent
+    EditDataVoucherComponent, 
+    CreateDataPromotionComponent, 
+    CreateDataStoreComponent, 
+    CreateDataUserComponent, 
+    CreateDataVoucherComponent
     // RtlComponent
   ]
 })

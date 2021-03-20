@@ -13,8 +13,6 @@ import { ComponentsModule } from "./components/components.module";
 import { DeleteDataComponent } from './layouts/pages/delete-data/delete-data.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 
-
-
 @NgModule({
   imports: [
     BrowserAnimationsModule,

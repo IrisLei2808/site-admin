@@ -5,32 +5,9 @@ import { MatTableDataSource } from "@angular/material/table";
 import { ToastrService } from "ngx-toastr";
 import { ApiServiceService } from "src/app/shared/service/api-service.service";
 import { ConfirmDeleteComponent } from "../confirm-delete/confirm-delete/confirm-delete.component";
-import { CreateDataComponent } from "../create-data/create-data.component";
+import { CreateDataStoreComponent } from "./create-data-store/create-data-store.component";
 import { EditDataStoreComponent } from "./edit-data-store/edit-data-store.component";
 
-export interface User {
-  name: string;
-  email: string;
-  phone: string;
-  website: string;
-  id: number,
-  username: string,
-  address: {
-    street: string,
-    suite: string,
-    city: string,
-    zipcode: string,
-    geo: {
-      lat: string,
-      lng: string
-    }
-  },
-  company: {
-    name: string,
-    catchPhrase: string,
-    bs: string
-  }
-}
 
 @Component({
   selector: "app-icons",
@@ -43,7 +20,6 @@ export class IconsComponent implements OnInit {
   user;
   title = '';
   currentTutorial = null;
-  users: User[];
   tutorials: any;
 
   @ViewChild(MatSort) sort: MatSort;
@@ -72,7 +48,7 @@ export class IconsComponent implements OnInit {
   }
 
   openDialog() {
-     this.dialog.open(CreateDataComponent, {
+     this.dialog.open(CreateDataStoreComponent, {
         disableClose: true
      }).afterClosed().subscribe(() => this.retrieveTutorials())
   }

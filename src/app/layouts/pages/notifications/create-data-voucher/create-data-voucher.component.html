@@ -1,0 +1,52 @@
+<h3>Add New Voucher Form</h3>
+<div style="width: 400px; margin: auto;">
+  <div class="submit-form">
+    <div>
+      <div class="form-group">
+        <label for="code">Voucher Code</label>
+        <input
+          type="text"
+          class="form-control"
+          id="code"
+          required
+          [(ngModel)]="promotion.code"
+          name="code"
+        />
+      </div>
+      <div class="form-group">
+        <label for="description">Voucher Description</label>
+        <input
+          class="form-control"
+          id="description"
+          required
+          [(ngModel)]="promotion.description"
+          name="description"
+        />
+      </div>
+      <div class="form-group">
+        <label for="quantity">Voucher Quantity</label>
+        <input
+          class="form-control"
+          id="quantity"
+          required
+          [(ngModel)]="promotion.quantity"
+          name="quantity"
+        />
+      </div>
+      <div class="form-group">
+        <label for="available">Voucher Available</label>
+        <input
+          class="form-control"
+          id="available"
+          required
+          [(ngModel)]="promotion.available"
+          name="available"
+        />
+      </div>
+    <button (click)="saveTutorial()" class="btn btn-success" style="margin-left: 120px;" >Submit</button>
+    <button (click)="onNoClick()" class="btn btn-error" style="float: right;">Close</button>
+
+    </div>
+
+  </div>
+</div>

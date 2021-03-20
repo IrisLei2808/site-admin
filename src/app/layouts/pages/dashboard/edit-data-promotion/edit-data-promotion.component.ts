@@ -2,7 +2,6 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { ApiServiceService } from 'src/app/shared/service/api-service.service';
-import { User } from '../dashboard.component';
 
 @Component({
   selector: 'app-edit-data-promotion',
@@ -14,7 +13,7 @@ export class EditDataPromotionComponent implements OnInit {
   currentTutorial = null;
   constructor(
     public dialogRef: MatDialogRef<EditDataPromotionComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: User,
+    @Inject(MAT_DIALOG_DATA) public data: any,
     private apiService: ApiServiceService,
     private toastr: ToastrService
     ) { }

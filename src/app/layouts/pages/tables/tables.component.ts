@@ -11,29 +11,6 @@ import { CreateDataComponent } from "../create-data/create-data.component";
 import { EditDataComponent } from "../edit-data/edit-data.component";
 
 
-export interface User {
-  name: string;
-  email: string;
-  phone: string;
-  website: string;
-  id: number,
-  username: string,
-  address: {
-    street: string,
-    suite: string,
-    city: string,
-    zipcode: string,
-    geo: {
-      lat: string,
-      lng: string
-    }
-  },
-  company: {
-    name: string,
-    catchPhrase: string,
-    bs: string
-  }
-}
 
 export interface Brand {
    id: number
@@ -56,7 +33,6 @@ export class TablesComponent implements OnInit {
   name = ''
   idx = ''
   currentTutorial = null;
-  users: User[];
   tutorials: any;
    datax: Brand[]
   @ViewChild(MatSort) sort: MatSort;
@@ -110,18 +86,18 @@ export class TablesComponent implements OnInit {
   }
 
 
-  deleteTutorial(idx): void {
+  deleteTutorial(idx: any): void {
     console.log("Data", idx.id)
     this.apiService.deleteBrand(idx.id)
       .subscribe(
+        error => {
+          console.log('error', error);
+          this.showError()
+        },
         response => {
           console.log('success', response);
           this.showSuccess();
           this.retrieveTutorials();
-        },
-        error => {
-          console.log('error', error);
-          this.showError()
         });
   }
 
