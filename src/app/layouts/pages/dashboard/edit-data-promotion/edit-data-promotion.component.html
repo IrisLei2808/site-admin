@@ -1,1 +1,24 @@
-<p>edit-data-promotion works!</p>
+<h4>Update Promotion Detail</h4>
+  <div mat-dialog-content>
+
+    <mat-form-field class="x">
+      <input matInput [(ngModel)]="data.id" id="id" name="id" placeholder="Promotion ID" disabled>
+    </mat-form-field> <br />
+    <mat-form-field class="x">
+      <input matInput [(ngModel)]="data.brandId" id="brandID" name="brandID" placeholder="Brand ID" disabled>
+    </mat-form-field> <br />
+    <mat-form-field class="x">
+      <input matInput [(ngModel)]="data.description" id="description" name="description" placeholder="Promotion Description">
+    </mat-form-field> <br />
+    <mat-form-field class="x">
+      <input matInput [(ngModel)]="data.beginDate" id="beginDate" name="beginDate" placeholder="Begin Date" disabled>
+    </mat-form-field> <br />
+    <mat-form-field class="x">
+      <input matInput [(ngModel)]="data.expiredDate" id="expiredDate" name="expiredDate" placeholder="Expired Date">
+    </mat-form-field> <br />
+
+  </div>
+  <div mat-dialog-actions style="float: right;">
+    <button mat-raised-button color="warn" (click)="updateTutorial()" ><mat-icon>send</mat-icon> Edit</button>
+    <button mat-button (click)="onNoClick()"><mat-icon>close</mat-icon> Cancel</button>
+  </div>

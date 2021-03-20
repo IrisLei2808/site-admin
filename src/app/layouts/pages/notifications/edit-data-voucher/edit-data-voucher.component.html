@@ -1,1 +1,26 @@
-<p>edit-data-voucher works!</p>
+<h4>Update Voucher Detail</h4>
+  <div mat-dialog-content>
+
+    <mat-form-field class="x">
+      <input matInput [(ngModel)]="data.code" id="id" name="id" placeholder="Voucer Code" >
+    </mat-form-field> <br />
+    <mat-form-field class="x">
+      <input matInput [(ngModel)]="data.description" id="name" name="name" placeholder="Voucher Description">
+    </mat-form-field> <br />
+    <mat-form-field class="x">
+      <input matInput [(ngModel)]="data.percentDiscount" id="address" name="address" placeholder="Voucher Percent Discount">
+    </mat-form-field> <br />
+    <mat-form-field class="x">
+      <input matInput [(ngModel)]="data.minRequiredAmount" id="phone" name="phone" placeholder="Voucher Amount">
+    </mat-form-field> <br />
+    <mat-form-field class="x">
+      <input matInput [(ngModel)]="data.quantity" id="website" name="website" placeholder="Voucher Quantity">
+    </mat-form-field> <br />
+    <mat-form-field class="x">
+      <input matInput [(ngModel)]="data.available" id="website" name="website" placeholder="Voucher Available">
+    </mat-form-field> <br />
+  </div>
+  <div mat-dialog-actions style="float: right;">
+    <button mat-raised-button color="warn" (click)="updateTutorial()" ><mat-icon>send</mat-icon> Edit</button>
+    <button mat-button (click)="onNoClick()"><mat-icon>close</mat-icon> Cancel</button>
+  </div>

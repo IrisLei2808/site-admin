@@ -12,10 +12,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { ComponentsModule } from "./components/components.module";
 import { DeleteDataComponent } from './layouts/pages/delete-data/delete-data.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import { EditDataPromotionComponent } from './layouts/pages/dashboard/edit-data-promotion/edit-data-promotion.component';
-import { EditDataStoreComponent } from './layouts/pages/icons/edit-data-store/edit-data-store.component';
-import { EditDataUserComponent } from './layouts/pages/map/edit-data-user/edit-data-user.component';
-import { EditDataVoucherComponent } from './layouts/pages/notifications/edit-data-voucher/edit-data-voucher.component';
+
 
 
 @NgModule({
@@ -31,7 +28,7 @@ import { EditDataVoucherComponent } from './layouts/pages/notifications/edit-dat
     ToastrModule.forRoot()
   ],
   exports: [NgbModule],
-  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent, DeleteDataComponent, EditDataPromotionComponent, EditDataStoreComponent, EditDataUserComponent, EditDataVoucherComponent],
+  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent, DeleteDataComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

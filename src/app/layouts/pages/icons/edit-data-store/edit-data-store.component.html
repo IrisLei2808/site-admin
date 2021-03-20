@@ -1,1 +1,24 @@
-<p>edit-data-store works!</p>
+<h4>Update Store Detail</h4>
+  <div mat-dialog-content>
+
+    <mat-form-field class="x">
+      <input matInput [(ngModel)]="data.id" id="id" name="id" placeholder="Store ID" disabled>
+    </mat-form-field> <br />
+    <mat-form-field class="x">
+      <input matInput [(ngModel)]="data.brandId" id="brandId" name="brandId" placeholder="Brand ID" disabled>
+    </mat-form-field> <br />
+    <mat-form-field class="x">
+      <input matInput [(ngModel)]="data.name" id="name" name="name" placeholder="Store Name">
+    </mat-form-field> <br />
+    <mat-form-field class="x">
+      <input matInput [(ngModel)]="data.address" id="address" name="address" placeholder="Store Address">
+    </mat-form-field> <br />
+    <mat-form-field class="x">
+      <input matInput [(ngModel)]="data.phone" id="phone" name="phone" placeholder="Store Phone">
+    </mat-form-field> <br />
+
+  </div>
+  <div mat-dialog-actions style="float: right;">
+    <button mat-raised-button color="warn" (click)="updateTutorial()" ><mat-icon>send</mat-icon> Edit</button>
+    <button mat-button (click)="onNoClick()"><mat-icon>close</mat-icon> Cancel</button>
+  </div>

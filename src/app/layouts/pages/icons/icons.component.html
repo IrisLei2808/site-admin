@@ -11,7 +11,7 @@
   
               <form class="example-form" style="float: right;">
                 <mat-form-field class="example-full-width" >
-                  <mat-label style="color: white;">Title</mat-label>
+                  <mat-label style="color: white;">Search By ID</mat-label>
                   <input type="tel" matInput placeholder="Velvet Coat" style="color: white;" [(ngModel)]="title" name="title" >
               <mat-icon matSuffix (click)="searchTitle()">search</mat-icon>
                 </mat-form-field>
@@ -23,29 +23,29 @@
             <div class=" table-responsive">
                 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
   
-                <ng-container matColumnDef="title">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                <ng-container matColumnDef="id">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Store ID </th>
                   <td mat-cell *matCellDef="let element"> {{element.id}} </td>
                 </ng-container>
               
-                <ng-container matColumnDef="imgUrl">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>
-                  <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+                <ng-container matColumnDef="brandID">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Brand ID </th>
+                  <td mat-cell *matCellDef="let element"> {{element.brandId}} </td>
                 </ng-container>
               
-                <ng-container matColumnDef="price">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone </th>
-                  <td mat-cell *matCellDef="let element"> {{element.jobs}} </td>
+                <ng-container matColumnDef="name">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Store Name </th>
+                  <td mat-cell *matCellDef="let element"> {{element.name}} </td>
                 </ng-container>
   
-                <ng-container matColumnDef="website">
-                  <th mat-header-cell *matHeaderCellDef class="x"> Website </th>
-                    <td mat-cell *matCellDef="let element"> {{element.jobs}} </td>
+                <ng-container matColumnDef="address">
+                  <th mat-header-cell *matHeaderCellDef class="x"> Store Address </th>
+                    <td mat-cell *matCellDef="let element"> {{element.address}} </td>
                 </ng-container>
   
-                <ng-container matColumnDef="promotion">
-                  <th mat-header-cell *matHeaderCellDef class="x"> Promotion </th>
-                    <td mat-cell *matCellDef="let element"> {{element.jobs}} </td>
+                <ng-container matColumnDef="phone">
+                  <th mat-header-cell *matHeaderCellDef class="x"> Store Phone </th>
+                    <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
                 </ng-container>
               
                 <ng-container matColumnDef="action">

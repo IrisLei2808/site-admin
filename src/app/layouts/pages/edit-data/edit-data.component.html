@@ -1,14 +1,22 @@
 <h4>Update Brand Detail</h4>
   <div mat-dialog-content>
+
     <mat-form-field class="x">
-      <input matInput [(ngModel)]="data.title" id="title" name="title" placeholder="Title">
+      <input matInput [(ngModel)]="data.id" id="id" name="id" placeholder="Brand ID" disabled>
     </mat-form-field> <br />
     <mat-form-field class="x">
-      <input matInput [(ngModel)]="data.imgUrl" id="imgUrl" name="imgUrl" placeholder="ImgUrl">
+      <input matInput [(ngModel)]="data.name" id="name" name="name" placeholder="Brand Name">
     </mat-form-field> <br />
     <mat-form-field class="x">
-      <input matInput [(ngModel)]="data.price" id="price" name="price" placeholder="Price">
+      <input matInput [(ngModel)]="data.address" id="address" name="address" placeholder="Brand Address">
     </mat-form-field> <br />
+    <mat-form-field class="x">
+      <input matInput [(ngModel)]="data.phone" id="phone" name="phone" placeholder="Brand Phone">
+    </mat-form-field> <br />
+    <mat-form-field class="x">
+      <input matInput [(ngModel)]="data.website" id="website" name="website" placeholder="Brand Website">
+    </mat-form-field> <br />
+
   </div>
   <div mat-dialog-actions style="float: right;">
     <button mat-raised-button color="warn" (click)="updateTutorial()" ><mat-icon>send</mat-icon> Edit</button>

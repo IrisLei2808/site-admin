@@ -35,20 +35,30 @@ export interface User {
   }
 }
 
+export interface Brand {
+   id: number
+   name: string
+   address: string
+   phone: string
+   website: string
+}
+
 @Component({
   selector: "app-tables",
   templateUrl: "tables.component.html",
   styleUrls: ["tables.component.scss"]
 })
 export class TablesComponent implements OnInit {
-  displayedColumns: string[] = ['title', 'imgUrl', 'price', 'website', 'promotion', 'action', 'delete'];
+  displayedColumns: string[] = ['id', 'name', 'address', 'phone', 'website', 'action', 'delete'];
   dataSource;
   user;
   title = '';
+  name = ''
+  idx = ''
   currentTutorial = null;
   users: User[];
   tutorials: any;
-
+   datax: Brand[]
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(
@@ -116,13 +126,17 @@ export class TablesComponent implements OnInit {
   }
 
   searchTitle(): void {
-    this.apiService.findByTitleBrand(this.title)
+    this.apiService.findByTitleBrand(this.idx)
       .subscribe(
         data => {
-          this.dataSource = data;
-          console.log(data);
+          if(Array.isArray(data)) {
+            this.dataSource = data;
+          }
+          else {
+            this.dataSource = [data] 
+          }
+          console.log('data', data);
           this.showSuccess();
-         // this.retrieveTutorials()
         },
         error => {
           console.log(error);

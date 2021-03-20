@@ -49,6 +49,4 @@ export class EditDataComponent implements OnInit {
    positionClass: 'toast-' + 'top' + '-' +  'right'
  });
    }
-
-
 }

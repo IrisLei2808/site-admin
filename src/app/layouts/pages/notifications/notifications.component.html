@@ -11,7 +11,7 @@
   
               <form class="example-form" style="float: right;">
                 <mat-form-field class="example-full-width" >
-                  <mat-label style="color: white;">Title</mat-label>
+                  <mat-label style="color: white;">Search By ID</mat-label>
                   <input type="tel" matInput placeholder="Velvet Coat" style="color: white;" [(ngModel)]="title" name="title" >
               <mat-icon matSuffix (click)="searchTitle()">search</mat-icon>
                 </mat-form-field>
@@ -23,29 +23,59 @@
             <div class=" table-responsive">
                 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
   
-                <ng-container matColumnDef="title">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                <ng-container matColumnDef="id">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Voucher ID </th>
                   <td mat-cell *matCellDef="let element"> {{element.id}} </td>
                 </ng-container>
               
-                <ng-container matColumnDef="imgUrl">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>
-                  <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+                <ng-container matColumnDef="promotionId">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Promotion ID </th>
+                  <td mat-cell *matCellDef="let element"> {{element.promotionId}} </td>
                 </ng-container>
               
-                <ng-container matColumnDef="price">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone </th>
-                  <td mat-cell *matCellDef="let element"> {{element.jobs}} </td>
+                <ng-container matColumnDef="code">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Voucher Code </th>
+                  <td mat-cell *matCellDef="let element"> {{element.code}} </td>
                 </ng-container>
   
-                <ng-container matColumnDef="website">
-                  <th mat-header-cell *matHeaderCellDef class="x"> Website </th>
-                    <td mat-cell *matCellDef="let element"> {{element.jobs}} </td>
+                <ng-container matColumnDef="description">
+                  <th mat-header-cell *matHeaderCellDef class="x"> Voucher Description </th>
+                    <td mat-cell *matCellDef="let element"> {{element.description}} </td>
                 </ng-container>
   
-                <ng-container matColumnDef="promotion">
-                  <th mat-header-cell *matHeaderCellDef class="x"> Promotion </th>
-                    <td mat-cell *matCellDef="let element"> {{element.jobs}} </td>
+                <ng-container matColumnDef="percentDiscount">
+                  <th mat-header-cell *matHeaderCellDef class="x"> Voucher Percent Discount </th>
+                    <td mat-cell *matCellDef="let element"> {{element.percentDiscount}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="minRequiredAmount">
+                  <th mat-header-cell *matHeaderCellDef class="x"> Voucher Required Amount </th>
+                    <td mat-cell *matCellDef="let element"> {{element.minRequiredAmount}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="maxDiscountAmount">
+                  <th mat-header-cell *matHeaderCellDef class="x"> Voucher Discount Amount </th>
+                    <td mat-cell *matCellDef="let element"> {{element.maxDiscountAmount}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="quantity">
+                  <th mat-header-cell *matHeaderCellDef class="x"> Voucher Quantity </th>
+                    <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="available">
+                  <th mat-header-cell *matHeaderCellDef class="x"> Voucher Available </th>
+                    <td mat-cell *matCellDef="let element"> {{element.available}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="beginDate">
+                  <th mat-header-cell *matHeaderCellDef class="x"> Begin Date </th>
+                    <td mat-cell *matCellDef="let element"> {{element.beginDate}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="expiredDate">
+                  <th mat-header-cell *matHeaderCellDef class="x"> Expired Date </th>
+                    <td mat-cell *matCellDef="let element"> {{element.expiredDate}} </td>
                 </ng-container>
               
                 <ng-container matColumnDef="action">

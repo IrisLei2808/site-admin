@@ -6,7 +6,7 @@ import { ToastrService } from "ngx-toastr";
 import { ApiServiceService } from "src/app/shared/service/api-service.service";
 import { ConfirmDeleteComponent } from "../confirm-delete/confirm-delete/confirm-delete.component";
 import { CreateDataComponent } from "../create-data/create-data.component";
-import { EditDataComponent } from "../edit-data/edit-data.component";
+import { EditDataStoreComponent } from "./edit-data-store/edit-data-store.component";
 
 export interface User {
   name: string;
@@ -38,7 +38,7 @@ export interface User {
   styleUrls: ["icons.component.scss"]
 })
 export class IconsComponent implements OnInit {
-  displayedColumns: string[] = ['title', 'imgUrl', 'price', 'website', 'promotion', 'action', 'delete'];
+  displayedColumns: string[] = ['id', 'brandID', 'name', 'address', 'phone', 'action', 'delete'];
   dataSource;
   user;
   title = '';
@@ -78,7 +78,7 @@ export class IconsComponent implements OnInit {
   }
 
   editUser(user) {
-    const dialogRef = this.dialog.open(EditDataComponent, {
+    const dialogRef = this.dialog.open(EditDataStoreComponent, {
       width: '35%',
       data: user,
       disableClose: true
@@ -116,7 +116,12 @@ export class IconsComponent implements OnInit {
     this.apiService.findByTitleStore(this.title)
       .subscribe(
         data => {
-          this.dataSource = data;
+          if(Array.isArray(data)) {
+            this.dataSource = data;
+          }
+          else {
+            this.dataSource = [data] 
+          }
           console.log(data);
           this.showSuccess();
          // this.retrieveTutorials()

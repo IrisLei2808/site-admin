@@ -25,6 +25,10 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { CreateDataComponent } from "src/app/layouts/pages/create-data/create-data.component";
 import { EditDataComponent } from "../pages/edit-data/edit-data.component";
 import { ConfirmDeleteComponent } from "../pages/confirm-delete/confirm-delete/confirm-delete.component";
+import { EditDataPromotionComponent } from "../pages/dashboard/edit-data-promotion/edit-data-promotion.component";
+import { EditDataStoreComponent } from "../pages/icons/edit-data-store/edit-data-store.component";
+import { EditDataUserComponent } from "../pages/map/edit-data-user/edit-data-user.component";
+import { EditDataVoucherComponent } from "../pages/notifications/edit-data-voucher/edit-data-voucher.component";
 
 @NgModule({
   imports: [
@@ -53,7 +57,11 @@ import { ConfirmDeleteComponent } from "../pages/confirm-delete/confirm-delete/c
     CreateDataComponent,
     MapComponent,
     EditDataComponent,
-    ConfirmDeleteComponent
+    ConfirmDeleteComponent,
+    EditDataPromotionComponent,
+    EditDataStoreComponent, 
+    EditDataUserComponent, 
+    EditDataVoucherComponent
     // RtlComponent
   ]
 })

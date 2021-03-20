@@ -17,8 +17,10 @@ export class CreateDataComponent implements OnInit {
   tutorials: any;
   dataSource;
   tutorial = {
-    title: '',
-    imgUrl: '',
+    name: '',
+    address: '',
+    phone: '',
+    website: ''
   };
    constructor(private apiService: ApiServiceService,
     public dialogRef: MatDialogRef<CreateDataComponent>,
@@ -26,8 +28,10 @@ export class CreateDataComponent implements OnInit {
     ) {}
   saveTutorial(): void {
     const data = {
-      title: this.tutorial.title,
-      imgUrl: this.tutorial.imgUrl,
+      name: this.tutorial.name,
+      address: this.tutorial.address,
+      phone: this.tutorial.phone,
+      website: this.tutorial.website
     };
 
     this.apiService.createBrand(data)

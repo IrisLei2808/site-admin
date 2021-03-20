@@ -7,6 +7,7 @@ import { ApiServiceService } from "src/app/shared/service/api-service.service";
 import { ConfirmDeleteComponent } from "../confirm-delete/confirm-delete/confirm-delete.component";
 import { CreateDataComponent } from "../create-data/create-data.component";
 import { EditDataComponent } from "../edit-data/edit-data.component";
+import { EditDataPromotionComponent } from "./edit-data-promotion/edit-data-promotion.component";
 
 export interface User {
   name: string;
@@ -39,10 +40,11 @@ export interface User {
 })
 export class DashboardComponent implements OnInit {
 
-  displayedColumns: string[] = ['title', 'imgUrl', 'price', 'website', 'promotion', 'action', 'delete'];
+  displayedColumns: string[] = ['id', 'brandID', 'description', 'beginDate', 'expiredDate', 'action', 'delete'];
   dataSource;
   user;
   title = '';
+  idx = ''
   currentTutorial = null;
   users: User[];
   tutorials: any;
@@ -63,7 +65,6 @@ export class DashboardComponent implements OnInit {
     this.apiService.getAllPromotion()
       .subscribe(
         data => {
-          this.tutorials = data;
           this.dataSource = new MatTableDataSource(data)
           console.log(data);
         },
@@ -79,7 +80,7 @@ export class DashboardComponent implements OnInit {
   }
 
   editUser(user) {
-    const dialogRef = this.dialog.open(EditDataComponent, {
+    const dialogRef = this.dialog.open(EditDataPromotionComponent, {
       width: '35%',
       data: user,
       disableClose: true
@@ -114,13 +115,16 @@ export class DashboardComponent implements OnInit {
   }
 
   searchTitle(): void {
-    this.apiService.findByTitlePromotion(this.title)
+    this.apiService.findByTitlePromotion(this.idx)
       .subscribe(
         data => {
-          this.dataSource = data;
-          console.log(data);
+          if(Array.isArray(data)) {
+            this.dataSource = data;
+          }
+          else {
+            this.dataSource = [data] 
+          }
           this.showSuccess();
-         // this.retrieveTutorials()
         },
         error => {
           console.log(error);
