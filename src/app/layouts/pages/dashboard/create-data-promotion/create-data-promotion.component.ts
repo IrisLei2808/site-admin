@@ -17,6 +17,8 @@ export class CreateDataPromotionComponent implements OnInit {
   brandId: number //
   promotion = {
     description: '',
+    beginDate: '',
+    expiredDate: ''
   };
    constructor(private apiService: ApiServiceService,
     public dialogRef: MatDialogRef<CreateDataPromotionComponent>,
@@ -26,6 +28,8 @@ export class CreateDataPromotionComponent implements OnInit {
     const data = {
       brandId: this.brandId, //
       description: this.promotion.description,
+      beginDate: this.promotion.beginDate,
+      expiredDate: this.promotion.expiredDate
     };
 
     this.apiService.createPromotion(data)

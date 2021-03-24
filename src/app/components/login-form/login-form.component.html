@@ -1,0 +1,58 @@
+<div class="a">
+   <div class="container" style="max-width: 550px">
+    
+      <div *ngIf="isLoggedin === true">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" class="form-control" [value]="socialUser.firstName" id="firstname" readonly>
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" class="form-control" [value]="socialUser.lastName" id="lastname" readonly>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="text" class="form-control" [value]="socialUser.email" id="email" readonly>
+        </div>
+    
+        <button type="button" (click)="logOut()" class="btn btn-primary">Log Out</button>
+      </div>
+    </div>
+
+   
+      <div>
+        <div>
+          <button type="button" (click)="loginWithGoogle()" class="btn btn-danger"></button>
+        </div>
+      </div>
+
+      <mat-card class="y">
+        <mat-card-title style="padding-left: 110px;">Administration Form</mat-card-title>
+     <mat-card-content>
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+      <p>
+        <mat-form-field style="width: 100%;">
+          <input type="text" matInput placeholder="Username" formControlName="username">
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field style="width: 100%;">
+          <input type="password" matInput placeholder="Password" formControlName="password">
+        </mat-form-field>
+      </p>
+
+      <p *ngIf="error" class="error">
+        {{ error }}
+      </p>
+
+
+    </form>
+  </mat-card-content>
+  <button type="button" (click)="loginWithFacebook()" class="btn btn-success"><img src="/assets/img/facebook.png" width="21px" style="margin-left: -15px;"> Login with Facebook</button>
+  <button type="button" (click)="loginWithGoogle()" class="btn btn-danger"><img src="/assets/img/search.png" width="19px"> Login with Google</button>
+
+
+</mat-card>
+     
+</div>

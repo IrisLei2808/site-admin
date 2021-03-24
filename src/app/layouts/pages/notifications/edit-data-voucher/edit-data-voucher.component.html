@@ -2,22 +2,28 @@
   <div mat-dialog-content>
 
     <mat-form-field class="x">
+      <input matInput [(ngModel)]="data.id" id="id" name="id" placeholder="Voucer ID" >
+    </mat-form-field> <br />
+    <mat-form-field class="x">
+      <input matInput [(ngModel)]="data.promotionId" id="id" name="id" placeholder="Promotion ID" >
+    </mat-form-field> <br />
+    <mat-form-field class="x">
       <input matInput [(ngModel)]="data.code" id="id" name="id" placeholder="Voucer Code" >
     </mat-form-field> <br />
     <mat-form-field class="x">
       <input matInput [(ngModel)]="data.description" id="name" name="name" placeholder="Voucher Description">
     </mat-form-field> <br />
     <mat-form-field class="x">
-      <input matInput [(ngModel)]="data.percentDiscount" id="address" name="address" placeholder="Voucher Percent Discount">
+      <input matInput [(ngModel)]="data.percentDiscount" id="address" name="address" placeholder="Voucher Percent Discount" type="number">
     </mat-form-field> <br />
     <mat-form-field class="x">
-      <input matInput [(ngModel)]="data.minRequiredAmount" id="phone" name="phone" placeholder="Voucher Amount">
+      <input matInput [(ngModel)]="data.minRequiredAmount" id="phone" name="phone" placeholder="Voucher Min Amount" type="number">
     </mat-form-field> <br />
     <mat-form-field class="x">
-      <input matInput [(ngModel)]="data.quantity" id="website" name="website" placeholder="Voucher Quantity">
+      <input matInput [(ngModel)]="data.maxDiscountAmount" id="phone" name="phone" placeholder="Voucher Max Amount" type="number">
     </mat-form-field> <br />
     <mat-form-field class="x">
-      <input matInput [(ngModel)]="data.available" id="website" name="website" placeholder="Voucher Available">
+      <input matInput [(ngModel)]="data.quantity" id="website" name="website" placeholder="Voucher Quantity" type="number">
     </mat-form-field> <br />
   </div>
   <div mat-dialog-actions style="float: right;">

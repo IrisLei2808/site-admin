@@ -37,7 +37,7 @@ export class ApiServiceService {
   }
   // promotion 
   getAllPromotion(): Observable<any> {
-    return this.httpClient.get(`${promotionApi}?limit=10`);
+    return this.httpClient.get(`${promotionApi}`);
   }
 
   createPromotion(data): Observable<any> {
@@ -59,7 +59,7 @@ export class ApiServiceService {
   // store
 
   getAllStore(): Observable<any> {
-    return this.httpClient.get(`${storeApi}?limit=10`);
+    return this.httpClient.get(`${storeApi}`);
   }
 
   createStore(data): Observable<any> {
@@ -81,7 +81,7 @@ export class ApiServiceService {
   // user 
 
   getAllUser(): Observable<any> {
-    return this.httpClient.get(`${userApi}?limit=10`);
+    return this.httpClient.get(`${userApi}`);
   }
 
   createUser(data): Observable<any> {
@@ -103,7 +103,7 @@ export class ApiServiceService {
   // voucher
 
   getAllVoucher(): Observable<any> {
-    return this.httpClient.get(`${voucherApi}?limit=10`);
+    return this.httpClient.get(`${voucherApi}`);
   }
 
   createVoucher(data: any): Observable<any> {

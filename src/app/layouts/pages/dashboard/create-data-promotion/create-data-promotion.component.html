@@ -5,12 +5,13 @@
       <div class="form-group">
         <label for="brandId">Brand ID</label>
         <input
-          type="text"
+          type="number"
           class="form-control"
           id="brandId"
           required
-          [(ngModel)]="brandId"
+          [(ngModel)]="this.brandId"
           name="brandId"
+          placeholder="2"
         />
       </div>
       <div class="form-group">
@@ -21,9 +22,32 @@
           required
           [(ngModel)]="promotion.description"
           name="description"
+          placeholder="So Sweety"
         />
       </div>
-    <button (click)="saveTutorial()" class="btn btn-success" style="margin-left: 120px;" >Submit</button>
+      <div class="form-group">
+        <label for="beginDate">Begin Date</label>
+        <input
+          class="form-control"
+          id="beginDate"
+          required
+          [(ngModel)]="promotion.beginDate"
+          name="beginDate"
+          placeholder="22021-03-23T14:36:40.064Z"
+        />
+      </div>
+      <div class="form-group">
+        <label for="expiredDate">Expired Date</label>
+        <input
+          class="form-control"
+          id="expiredDate"
+          required
+          [(ngModel)]="promotion.expiredDate"
+          name="expiredDate"
+          placeholder="2021-03-23T14:36:40.064Z"
+        />
+      </div>
+    <button (click)="saveTutorial()" class="btn btn-success" style="margin-left: 120px;" [disabled]="!promotion.description || !promotion.beginDate || !promotion.expiredDate" >Submit</button>
     <button (click)="onNoClick()" class="btn btn-error" style="float: right;">Close</button>
 
     </div>

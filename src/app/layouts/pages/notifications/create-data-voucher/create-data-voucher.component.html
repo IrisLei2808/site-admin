@@ -3,6 +3,17 @@
   <div class="submit-form">
     <div>
       <div class="form-group">
+        <label for="promotionId">Promotion ID</label>
+        <input
+          type="number"
+          class="form-control"
+          id="promotionId"
+          required
+          [(ngModel)]="this.promotionId"
+          name="promotionId"
+        />
+      </div>
+      <div class="form-group">
         <label for="code">Voucher Code</label>
         <input
           type="text"
@@ -21,6 +32,40 @@
           required
           [(ngModel)]="promotion.description"
           name="description"
+          type="text"
+        />
+      </div>
+      <div class="form-group">
+        <label for="percentDiscount">Percent Discount</label>
+        <input
+          class="form-control"
+          id="percentDiscount"
+          required
+          [(ngModel)]="this.percentDiscount"
+          name="percentDiscount"
+          type="number"
+        />
+      </div>
+      <div class="form-group">
+        <label for="minRequiredAmount">Min Amount</label>
+        <input
+          class="form-control"
+          id="minRequiredAmount"
+          required
+          [(ngModel)]="this.minRequiredAmount"
+          name="minRequiredAmount"
+          type="number"
+        />
+      </div>
+      <div class="form-group">
+        <label for="maxDiscountAmount">Max Amount</label>
+        <input
+          class="form-control"
+          id="maxDiscountAmount"
+          required
+          [(ngModel)]="this.maxDiscountAmount"
+          name="maxDiscountAmount"
+          type="number"
         />
       </div>
       <div class="form-group">
@@ -29,20 +74,12 @@
           class="form-control"
           id="quantity"
           required
-          [(ngModel)]="promotion.quantity"
+          [(ngModel)]="this.quantity"
           name="quantity"
+          type="number"
         />
       </div>
-      <div class="form-group">
-        <label for="available">Voucher Available</label>
-        <input
-          class="form-control"
-          id="available"
-          required
-          [(ngModel)]="promotion.available"
-          name="available"
-        />
-      </div>
+
     <button (click)="saveTutorial()" class="btn btn-success" style="margin-left: 120px;" >Submit</button>
     <button (click)="onNoClick()" class="btn btn-error" style="float: right;">Close</button>
 

@@ -80,13 +80,13 @@ export class DashboardComponent implements OnInit {
     this.apiService.deletePromotion(idx.id)
       .subscribe(
         response => {
-          console.log('success', response);
-          this.showSuccess();
-          this.retrieveTutorials();
+          console.log('error', response);
+          this.showError()
         },
         error => {
-          console.log('error', error);
-          this.showError()
+          console.log('success', error);
+          this.showSuccess();
+          this.retrieveTutorials();
         });
   }
 

@@ -14,8 +14,8 @@ export class CreateDataStoreComponent implements OnInit {
 
   tutorials: any;
   dataSource;
+  brandId: number
   promotion = {
-    brandId: '', // 
     name: '',
     address: '',
     phone: ''
@@ -26,7 +26,7 @@ export class CreateDataStoreComponent implements OnInit {
     ) {}
   saveTutorial(): void {
     const data = {
-      brandId: this.promotion.brandId,
+      brandId: this.brandId,
       name: this.promotion.name,
       address: this.promotion.address,
       phone: this.promotion.phone

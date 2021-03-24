@@ -13,11 +13,14 @@ export class CreateDataVoucherComponent implements OnInit {
 
   tutorials: any;
   dataSource;
+  promotionId: number
+  percentDiscount: number
+  minRequiredAmount: number
+  maxDiscountAmount: number
+  quantity: number
   promotion = {
     code: '',
     description: '',
-    quantity: '',
-    available: ''
   };
    constructor(private apiService: ApiServiceService,
     public dialogRef: MatDialogRef<CreateDataVoucherComponent>,
@@ -25,10 +28,13 @@ export class CreateDataVoucherComponent implements OnInit {
     ) {}
   saveTutorial(): void {
     const data = {
+      promotionId: this.promotionId,
       code: this.promotion.code,
       description: this.promotion.description,
-      quantity: this.promotion.quantity,
-      available: this.promotion.available
+      percentDiscount: this.percentDiscount,
+      minRequiredAmount: this.minRequiredAmount,
+      maxDiscountAmount: this.maxDiscountAmount,
+      quantity: this.quantity,
     };
 
     this.apiService.createVoucher(data)

@@ -15,7 +15,7 @@ import { EditDataUserComponent } from "./edit-data-user/edit-data-user.component
   styleUrls: ["map.component.scss"]
 })
 export class MapComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'name', 'address', 'createdDate', 'action', 'delete'];
+  displayedColumns: string[] = ['id', 'name', 'address', 'phone','createdDate', 'action', 'delete'];
   dataSource;
   user;
   title = '';
@@ -78,13 +78,13 @@ export class MapComponent implements OnInit {
     this.apiService.deleteUser(idx.id)
       .subscribe(
         response => {
-          console.log('success', response);
-          this.showSuccess();
-          this.retrieveTutorials();
+          console.log('error', response);
+          this.showError()
         },
         error => {
-          console.log('error', error);
-          this.showError()
+          console.log('success', error);
+          this.showSuccess();
+          this.retrieveTutorials();
         });
   }
 
